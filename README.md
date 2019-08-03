@@ -1,6 +1,7 @@
 [//]: # (Image References)
 
 [image1]: https://user-images.githubusercontent.com/10624937/42135619-d90f2f28-7d12-11e8-8823-82b970a54d7e.gif "Trained Agent"
+[plot1]: ./plot.png "Trained PLot"
 
 # Project 1: Navigation
 
@@ -59,14 +60,18 @@ $client.DownloadFile("https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana
 ```
 unzip Banana_Linux.zip
 ```
+
     - Mac OSX:
+
 ```
 curl -O https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip
 ```
+
     - Windows (32-bit): [PowerShell]
 ```
 Expand-Archive -Path Banana_Windows_x86.zip -DestinationPath .
 ```
+
     - Windows (64-bit): [PowerShell]
 ```
 Expand-Archive -Path Banana_Windows_x86_64.zip -DestinationPath .
@@ -144,7 +149,7 @@ Environment solved in 403 episodes!	Average Score: 13.03
 ```
 
 and finally you should find the following plot:
-[image1]: ./plot.png "Training Plot"
+![Training Plot][image1]
 
 9. Click on the "X" button to close the plotting window.
 

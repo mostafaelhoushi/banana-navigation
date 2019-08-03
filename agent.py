@@ -44,7 +44,7 @@ class Agent():
         self.t_step = 0
 
     def load_weights(self, weights_path='checkpoint.pth'):
-        torch.save(self.qnetwork_local.state_dict(), weights_path)
+        self.qnetwork_local.load_state_dict(torch.load(weights_path))
     
     def step(self, state, action, reward, next_state, done):
         # Save experience in replay memory
