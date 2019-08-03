@@ -34,20 +34,20 @@ cd banana-navigation
 ```
 
 3. Download the Unity environment using one of the commands below.  You need only select the environment that matches your operating system:
-    - Linux: 
+- Linux: 
 ```
 wget https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip
 ```
-    - Mac OSX:
+- Mac OSX:
 ```
 curl -O https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip
 ```
-    - Windows (32-bit): [PowerShell]
+- Windows (32-bit): [PowerShell]
 ```
 $client = new-object System.Net.WebClient
 $client.DownloadFile("https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86.zip")
 ```
-    - Windows (64-bit):
+- Windows (64-bit):
 ```
 $client = new-object System.Net.WebClient
 $client.DownloadFile("https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86_64.zip")
@@ -56,35 +56,31 @@ $client.DownloadFile("https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana
     (_For Windows users_) Check out [this link](https://support.microsoft.com/en-us/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64) if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
 
 4. Unzip (or decompress) the downloaded file: 
-    - Linux: 
+- Linux: 
 ```
 unzip Banana_Linux.zip
 ```
-
-    - Mac OSX:
+- Mac OSX:
 
 ```
 curl -O https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip
 ```
-
-    - Windows (32-bit): [PowerShell]
+- Windows (32-bit): [PowerShell]
 ```
 Expand-Archive -Path Banana_Windows_x86.zip -DestinationPath .
 ```
-
-    - Windows (64-bit): [PowerShell]
+- Windows (64-bit): [PowerShell]
 ```
 Expand-Archive -Path Banana_Windows_x86_64.zip -DestinationPath .
 ```
 
 5. Create (and activate) a new environment with Python 3.6.
-    - Linux or Mac OSX:
+- Linux or Mac OSX:
 ```
 conda create --name drlnd python=3.6
 source activate drlnd
 ```
-
-    - Windows:
+- Windows:
 ```
 conda create --name drlnd python=3.6
 activate drlnd
@@ -149,7 +145,7 @@ Environment solved in 403 episodes!	Average Score: 13.03
 ```
 
 and finally you should find the following plot:
-![Training Plot][image1]
+![Training Plot][plot1]
 
 9. Click on the "X" button to close the plotting window.
 
