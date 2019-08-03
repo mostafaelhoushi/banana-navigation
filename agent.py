@@ -42,6 +42,9 @@ class Agent():
         self.memory = ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, seed)
         # Initialize time step (for updating every UPDATE_EVERY steps)
         self.t_step = 0
+
+    def load_weights(self, weights_path='checkpoint.pth'):
+        torch.save(self.qnetwork_local.state_dict(), weights_path)
     
     def step(self, state, action, reward, next_state, done):
         # Save experience in replay memory
