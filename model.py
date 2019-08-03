@@ -5,25 +5,32 @@ import torch.nn.functional as F
 class QNetwork(nn.Module):
     """Actor (Policy) Model."""
 
-    def __init__(self, state_size, action_size, seed, fc1_units=64, fc2_units=64):
+    def __init__(self, state_size, action_size, seed, hidden_sizes=[64, 64]):
         """Initialize parameters and build model.
         Params
         ======
             state_size (int): Dimension of each state
             action_size (int): Dimension of each action
             seed (int): Random seed
-            fc1_units (int): Number of nodes in first hidden layer
-            fc2_units (int): Number of nodes in second hidden layer
+            hidden_sizes (list of int): Number of nodes in each hidden layer
         """
+        assert(len(hidden_sizes) > 0, "hidden_sizes parameter needs to be a list of at least one integer")
         super(QNetwork, self).__init__()
         self.seed = torch.manual_seed(seed)
-        self.fc1 = nn.Linear(state_size, fc1_units)
-        self.fc2 = nn.Linear(fc1_units, fc2_units)
-        self.fc3 = nn.Linear(fc2_units, action_size)
+        self.fc_first = nn.Linear(state_size, hidden_sizes[0])
+
+        self.fc_list = nn.ModuleList()
+        if (len(hidden_sizes) > 1):
+            self.fc_list.extend([nn.Linear(hidden_sizes[i], hidden_sizes[i+1]) for i in range(0,len(hidden_sizes)-1)])
+
+        self.fc_last = nn.Linear(hidden_sizes[-1], action_size)
 
     def forward(self, state):
         """Build a network that maps state -> action values."""
-        x = F.relu(self.fc1(state))
-        x = F.relu(self.fc2(x))
-        return self.fc3(x)
+        x = F.relu(self.fc_first(state))
+
+        for fc_hidden in self.fc_list:
+            x = F.relu(fc_hidden(x))
+
+        return self.fc_last(x)
 
