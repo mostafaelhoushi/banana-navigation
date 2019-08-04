@@ -9,6 +9,13 @@ Then, we have an exploitation stage where the partially trained neural network g
 We alternate between the exploration and exploitation to get the best possible model.
 
 ### Chosen Hyperparameters
+- replay buffer size of 10K
+- minibatch size of 64
+- learning rate of 5 e-4
+- discount factor, gamma of 0.99
+- tau value for soft update of target parameters of 1e-3
+- how often to update the network: every 4 steps
+- epsilon initialized at 1, and decays with rate 0.995 till a minimum value of 0.01
 
 ### Model Architecture
 A typical fully-connected neural network architecture consists of cascaded pairs of linear and non-linear layers. 
@@ -24,3 +31,11 @@ The following is the plot of reward at evert episode:
 
 - Increase number of training episodes
 - Increase depth of network
+- Use DDQN (Double Deep Q-Network)
+- Use N-Step Q-Learning
+- Use Prioritized Experience Replay
+- Use Dueling Q-Network
+- Use Distributional RL
+- Use Noisy Network
+
+Combine the above to build the Rainbow model.
