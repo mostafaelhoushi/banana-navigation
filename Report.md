@@ -2,6 +2,10 @@
 [plot1]: ./plot.png "Trained PLot"
 
 ## Learning Algorithm
+Reinforcement learning involves an agent living in an environment, and at each state of the environment, it takes an action that results in a reward as well as the change of the state. The aim of reinforcement learning is to maximize the accumulative reward.
+Deep learning when used for supervised learning or classification, involves a neural network with input feature vector, and an output vector that shows the probability of each of the possible classes.
+On the other hand, deep learning when used for reinforcement learning, involves a neural network with input state vector, and an output vector with the estimated accumulative reward for each possible action.
+
 We train a neural network to deduce, for each possible state, the reward of each possible action.
 To train that network, we first direct the agent to take random actions - no matter what the state is - to create a dataset showing the different rewards of various actions for each state.
 In this exploration stage, this data is then used to train the neural network to map the input state to the Q function, i.e., the estimated reward for each possible action.
